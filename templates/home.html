@@ -78,8 +78,13 @@
         <ul class="posts">
             {% for post in post %}
             <li class="post-item">
-                <h3><a href={% url 'detailpostview' post.pk %}>{{ post.post_title }}</a></h3>
+                <h3><a href={% url 'detailpostview' post.pk %}>{{ post.post_title}}</a></h3>
                 <p>Posted by: {{ post.post_user }}</p>
+                {% if post.post_image %}
+                <img src="{{ post.post_image.url }}" alt="Post Image" width="200" height=200>
+            {% else %}
+                <p>No image available.</p>
+            {% endif %}
             </li>
             {% endfor %}
         </ul>

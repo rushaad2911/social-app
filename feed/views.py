@@ -35,7 +35,7 @@ def DummyData(request):
         Post.objects.create(
             
             post_title = fake.name(),
-            post_user = request.user
+            post_user = request.user,
             
         )
         
